@@ -1,6 +1,3 @@
-provider "aws" {
-  region = "ap-southeast-2"
-}
 resource "aws_instance" "Master_1" {
   key_name      = "January"
   instance_type = "m7i-flex.large"
