@@ -1,5 +1,5 @@
 provider "aws"{
-  region="ap-southeast2"
+  region="ap-southeast-2"
 }
 
 module "ec2"{

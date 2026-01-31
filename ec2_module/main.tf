@@ -7,4 +7,7 @@ resource "aws_instance" "Master_1" {
     volume_type           = "gp3"
     delete_on_termination = true
   }
+  tags{
+    Name="Master_1"
+  }
 }
