@@ -1,6 +1,10 @@
 resource "aws_instance" "Master_1" {
   key_name      = "January"
-  instance_type = "t3.small"
+  for_each={
+    jenkins="t3.small"
+    sonarqube="t3.small"
+  }
+  instance_type = each.value
   ami           = "ami-048ab8ac7e8c6533d"
   root_block_device {
     volume_size           = 20
@@ -8,6 +12,6 @@ resource "aws_instance" "Master_1" {
     delete_on_termination = true
   }
   tags={
-    Name="Master_1"
+    Name=each.key
   }
 }
